@@ -10,13 +10,13 @@ public class TestingMain {
         Integer addResult = calTest.add();
         Integer subtractResult = calTest.subtract();
 
-        if (addResult.equals(6 + 4)) {
+        if (addResult.equals(calTest.getA() + calTest.getB())) {
             System.out.println("Aadding test is correct");
         } else {
             System.out.println("Adding generate ERRORS!!!");
         }
 
-        if (subtractResult.equals(6 - 4)) {
+        if (subtractResult.equals(calTest.getA() - calTest.getB())) {
             System.out.println("Subtracting test is correct");
         } else {
             System.out.println("Subtracting generate ERRORS!!!");
