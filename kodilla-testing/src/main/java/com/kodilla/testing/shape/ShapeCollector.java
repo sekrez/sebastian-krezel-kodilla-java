@@ -4,9 +4,9 @@ package com.kodilla.testing.shape;
 import java.util.ArrayList;
 
 class ShapeCollector {
-   ArrayList<Shape> shapeCollection = new ArrayList<Shape>();
+    ArrayList<Shape> shapeCollection = new ArrayList<Shape>();
 
-    public void addFigure(Shape shape){
+    public void addFigure(Shape shape) {
         shapeCollection.add(shape);
     }
 
@@ -19,19 +19,25 @@ class ShapeCollector {
         return result;
     }
 
-    public Shape getFigure(int n){
+    public Shape getFigure(int n) {
         Shape shape = null;
         if (n >= 0 && n < shapeCollection.size()) {
-            shape = shapeCollection.get(n);}
+            shape = shapeCollection.get(n);
+        }
         return shape;
     }
 
-    public void showFigures(){
-        //Shape shape
+    public boolean showFigures() {
+        boolean result = false;
         if (shapeCollection.size() >= 1) {
-            for(Shape shape : shapeCollection) {
+            result = true;
+            for (Shape shape : shapeCollection) {
                 System.out.println(shape.getShapeName());
             }
-        } else {System.out.println("I have noting to show");}
+        } else {
+            System.out.println("I have noting to show.");
+
+        }
+        return result;
     }
 }
