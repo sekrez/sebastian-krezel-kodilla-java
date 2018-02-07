@@ -10,7 +10,6 @@ public class ShapeCollectorTestSuite {
     @BeforeClass
     public static void beforeAllTests() {
         System.out.println("This is the beginning of tests.");
-        ShapeCollector shapeCollector = new ShapeCollector();
     }
 
     @AfterClass
@@ -83,7 +82,20 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    public void showFigures() {
+    public void testShowFiguresWhenEmpty() {
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
+        Shape circle = new Circle(3.4);
+        //When
+        shapeCollector.showFigures();
+        //Then
+        Assert.assertTrue(shapeCollector.shapeCollection.isEmpty());
+        Assert.assertEquals(0, shapeCollector.shapeCollection.size());
+
+    }
+
+    @Test
+    public void testShowFigures() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape circle01 = new Circle(3);
